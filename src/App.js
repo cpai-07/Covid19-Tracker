@@ -26,6 +26,15 @@ const App = () => {
   const [mapZoom, setMapZoom] = useState(3);
 
   useEffect(() => {
+    var ads = document.getElementsByClassName("adsbygoogle").length;
+    for (var i = 0; i < ads; i++) {
+      try {
+        (ads = window.adsbygoogle || []).push({});
+      } catch (e) {}
+    }
+  }, []);
+
+  useEffect(() => {
     fetch("https://disease.sh/v3/covid-19/all")
       .then((response) => response.json())
       .then((data) => {
@@ -110,6 +119,14 @@ const App = () => {
             total={numeral(countryInfo.deaths).format("0.0a")}
           />
         </div>
+        <ins
+          class="adsbygoogle"
+          style={{ display: "block" }}
+          data-ad-client="ca-pub-8489944922746075"
+          data-ad-slot="4658867835"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        ></ins>
         <Map
           countries={mapCountries}
           casesType={casesType}
