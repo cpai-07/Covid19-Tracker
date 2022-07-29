@@ -123,7 +123,7 @@ const App = () => {
           class="adsbygoogle"
           style={{ display: "block" }}
           data-ad-client="ca-pub-8489944922746075"
-          data-ad-slot="4658867835"
+          data-ad-slot="8032008776"
           data-ad-format="auto"
           data-full-width-responsive="true"
         ></ins>
