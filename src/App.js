@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Adsense } from "@ctrl/react-adsense";
 import "./App.css";
 import {
   MenuItem,
@@ -25,14 +26,14 @@ const App = () => {
   const [mapCenter, setMapCenter] = useState([34.80746, -40.4796]);
   const [mapZoom, setMapZoom] = useState(3);
 
-  useEffect(() => {
-    var ads = document.getElementsByClassName("adsbygoogle").length;
-    for (var i = 0; i < ads; i++) {
-      try {
-        (ads = window.adsbygoogle || []).push({});
-      } catch (e) {}
-    }
-  }, []);
+  // useEffect(() => {
+  //   var ads = document.getElementsByClassName("adsbygoogle").length;
+  //   for (var i = 0; i < ads; i++) {
+  //     try {
+  //       (ads = window.adsbygoogle || []).push({});
+  //     } catch (e) {}
+  //   }
+  // }, []);
 
   useEffect(() => {
     fetch("https://disease.sh/v3/covid-19/all")
@@ -119,14 +120,36 @@ const App = () => {
             total={numeral(countryInfo.deaths).format("0.0a")}
           />
         </div>
-        <ins
+        {/* <ins
           class="adsbygoogle"
           style={{ display: "block" }}
           data-ad-client="ca-pub-8489944922746075"
           data-ad-slot="8032008776"
           data-ad-format="auto"
           data-full-width-responsive="true"
-        ></ins>
+        ></ins> */}
+        {/* <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8489944922746075"
+          crossorigin="anonymous"
+        ></script> */}
+
+        {/* <ins
+          class="adsbygoogle"
+          style={{ display: "block" }}
+          data-ad-client="ca-pub-8489944922746075"
+          data-ad-slot="8032008776"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        ></ins> */}
+        {/* <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> */}
+        <Adsense
+          client="ca-pub-8489944922746075"
+          slot="8032008776"
+          style={{ display: "block" }}
+          layout="in-article"
+          format="fluid"
+        />
         <Map
           countries={mapCountries}
           casesType={casesType}
